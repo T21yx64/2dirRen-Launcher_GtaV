@@ -97,15 +97,12 @@ timeout 1 /nobreak
 rem below is for disabling net after launching modded
 
 if "%condition%" == "true" (
-	echo.
-	netsh interface set interface name="Wi-Fi" admin=disabled
-	netsh interface set interface name="Ethernet" admin=disabled
-	timeout 1 /nobreak
 	cls
 	echo.
-	echo internet disabled to protect from detection.
+	echo internet will be disabled to protect from detection.
+	echo let game launch then specify..
 	echo.
-	echo you will need to disable internet..specify duration to disable for
+	echo specify duration to disable for
 	goto choice )
 :choicehrerr
 if not %hr%==0 goto hrproc
@@ -129,6 +126,13 @@ set /a sec=nec
 goto proc
 :proc
 set time=%sec%
+cls
+echo.
+netsh interface set interface name="Wi-Fi" admin=disabled
+netsh interface set interface name="Ethernet" admin=disabled
+echo.
+echo Internet disabled..
+timeout 1 /nobreak
 goto timeloop
 
 :timeloop
