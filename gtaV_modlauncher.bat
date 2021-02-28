@@ -91,8 +91,7 @@ cls
 echo Running Game..
 timeout 1 /nobreak
 rem shortucut file to run gtav from, preferably in same folder
-rem start GTAVrun.url
-echo run
+start GTAVrun.url
 timeout 1 /nobreak
 
 rem below is for disabling net after launching modded
