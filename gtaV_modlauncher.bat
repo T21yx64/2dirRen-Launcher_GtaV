@@ -132,6 +132,9 @@ set time=%sec%
 goto timeloop
 
 :timeloop
+cls
+echo.
+echo.
 set /a time=%time%-1
 if %time%==0 goto timesup
 title Counting down...
